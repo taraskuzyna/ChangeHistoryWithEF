@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeTrackerWithEF", "ChangeTrackerWithEF\ChangeTrackerWithEF.csproj", "{4E482804-E8B9-43B3-9813-9C86FC5E6AB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeTrackerWithEF.Test", "ChangeTrackerWithEF.Test\ChangeTrackerWithEF.Test.csproj", "{DCB6CA78-972C-446F-BA73-CF71D522890B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4E482804-E8B9-43B3-9813-9C86FC5E6AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E482804-E8B9-43B3-9813-9C86FC5E6AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E482804-E8B9-43B3-9813-9C86FC5E6AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB6CA78-972C-446F-BA73-CF71D522890B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB6CA78-972C-446F-BA73-CF71D522890B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB6CA78-972C-446F-BA73-CF71D522890B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB6CA78-972C-446F-BA73-CF71D522890B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

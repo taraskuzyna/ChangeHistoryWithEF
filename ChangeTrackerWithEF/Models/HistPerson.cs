@@ -21,9 +21,5 @@ namespace ChangeTrackerWithEF.Models
         public string ModifiedBy { get; set; }
 
         public DateTime ModifiedAt { get; set; }
-
-        public virtual Address Address { get; set; }
-
-        public virtual IEnumerable<Car> Cars { get; set; }
     }
 }

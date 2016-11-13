@@ -10,9 +10,6 @@ namespace ChangeTrackerWithEF.Configurations
         public void Configure(EntityTypeConfiguration<Car> config)
         {
             config.HasKey(x => x.Id);
-            config
-                .Property(e => e.Id)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             config.Property(x => x.Model).IsRequired();
             config.HasRequired(x => x.Owner);
 

@@ -10,11 +10,8 @@ namespace ChangeTrackerWithEF.Configurations
         public void Configure(EntityTypeConfiguration<Person> config)
         {
             config.HasKey(x => x.Id);
-            config
-                .Property(e => e.Id)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             config.HasMany(x => x.Cars).WithRequired(x => x.Owner);
-            config.HasOptional(x => x.Address);
+            config.HasOptional(x => x.Address).WithRequired(x => x.Person);
 
             new TrackedEntityConfiguration<Person>().Configure(config);
         }

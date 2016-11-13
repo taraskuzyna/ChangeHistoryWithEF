@@ -11,9 +11,9 @@ using System.Linq;
 
 namespace ChangeTrackerWithEF
 {
-    public class MyDbContext : DbContext
+    public class ChangeTrackerDbContext : DbContext
     {
-        public MyDbContext() : base("TestDb")
+        public ChangeTrackerDbContext() : base("ChangeTrackerWithEF")
         {
 
         }
@@ -72,6 +72,8 @@ namespace ChangeTrackerWithEF
                 }
             }
 
+            IMapper mapper = AutomapperConfiguration.CreateMapper();
+
             if (this.ChangeTracker.Entries().Where(s => s.State == EntityState.Modified || s.State == EntityState.Deleted).Any())
             {
                 foreach (DbEntityEntry entry in this.ChangeTracker.Entries().Where(s => s.State == EntityState.Modified || s.State == EntityState.Deleted))
@@ -83,12 +85,12 @@ namespace ChangeTrackerWithEF
 
                     // type of class which implememt base interface and IHistEntity
                     Type histPoco = AppDomain.CurrentDomain.GetAssemblies().SelectMany(s => s.GetTypes())
-                        .Where(c => baseInterface.IsAssignableFrom(c) && typeof(IHistEntity).IsAssignableFrom(c)).Single();
+                        .Where(c => baseInterface.IsAssignableFrom(c) && typeof(IHistEntity).IsAssignableFrom(c)).First();
 
                     if (EntityHasChanges(entry, poco))
                     {
                         var histEntity = Activator.CreateInstance(histPoco);
-                        Mapper.Map(entry.OriginalValues.ToObject(), histEntity, poco, histPoco);
+                        mapper.Map(entry.OriginalValues.ToObject(), histEntity, poco, histPoco);
                         if (histEntity != null)
                             this.Set(histPoco).Add(histEntity);
                     }

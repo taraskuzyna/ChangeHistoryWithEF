@@ -2,3 +2,6 @@
 packages/
 ChangeTrackerWithEF/bin/
 ChangeTrackerWithEF/obj/
+ChangeTrackerWithEF.Test/bin/
+ChangeTrackerWithEF.Test/obj/
+*.sdf

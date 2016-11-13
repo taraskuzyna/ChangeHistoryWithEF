@@ -20,5 +20,7 @@ namespace ChangeTrackerWithEF.Models
         public DateTime ModifiedAt { get; set; }
 
         public string ModifiedBy { get; set; }
+
+        public virtual Person Person { get; set; }
     }
 }
